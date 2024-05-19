@@ -7,7 +7,7 @@ namespace aharoT6.Views;
 
 public partial class VEstudiante : ContentPage
 {
-	private const string url = "http://172.18.112.1/moviles/wsestudiantes.php";
+	private const string url = "http://192.168.100.28/moviles/wsestudiantes.php";
 	private readonly HttpClient cliente = new HttpClient();
 	private ObservableCollection<Estudiante> est;
 
@@ -25,4 +25,15 @@ public partial class VEstudiante : ContentPage
 		est= new ObservableCollection<Estudiante>(mostrar);
 		listEstudiante.ItemsSource = est;
 	}
+
+    private void btnAgregar_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new VAgregar());
+    }
+
+    private void listEstudiante_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+		var objEstudiante = (Estudiante)e.SelectedItem;
+		Navigation.PushAsync(new VActEliminar(objEstudiante));
+    }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aharoT6.Views.VAgregar"
+             Title="VAgregar">
+    <VerticalStackLayout
+        Spacing="25">
+        <Label 
+            Text="Agregar estudiante"
+            FontSize="20" 
+            HorizontalOptions="Center" 
+            TextColor="Blue">
+        </Label>
+        <Entry
+            x:Name="txtNombre"
+            Placeholder="Ingrese el nombre">
+        </Entry>
+        <Entry
+            x:Name="txtApellido"
+            Placeholder="Ingrese el apellido">
+        </Entry>
+        <Entry
+            x:Name="txtEdad"
+            Placeholder="Ingrese la edad"
+            MaxLength="3"
+            Keyboard="Numeric">
+        </Entry>
+        <Button
+            x:Name="btnGuardar"
+            Text="Guardar Estudiante"
+            Clicked="btnGuardar_Clicked">
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>

@@ -47,7 +47,7 @@
             </Label>
         </Grid>
         <ListView 
-            x:Name="listEstudiante">
+            x:Name="listEstudiante" ItemSelected="listEstudiante_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -63,7 +63,8 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
-                                </Grid.ColumnDefinitions>                                <Label x:Name="ltlcodigo" 
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="ltlcodigo" 
                                        Text="{Binding codigo}"
                                        Grid.Row="0"
                                        Grid.Column="0">
@@ -90,5 +91,11 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button
+            x:Name="btnAgregar"
+            Text="Agregar Estudiante"
+            Clicked="btnAgregar_Clicked">
+            
+        </Button>
     </VerticalStackLayout>
 </ContentPage>
